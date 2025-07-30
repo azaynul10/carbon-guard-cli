@@ -3,8 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-65%20passed-green.svg)](#testing)
-[![GitHub Issues](https://img.shields.io/github/issues/YOUR_USERNAME/carbon-guard-cli)](https://github.com/YOUR_USERNAME/carbon-guard-cli/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/carbon-guard-cli)](https://github.com/YOUR_USERNAME/carbon-guard-cli/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/azaynul10/carbon-guard-cli)](https://github.com/azaynul10/carbon-guard-cli/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/azaynul10/carbon-guard-cli)](https://github.com/azaynul10/carbon-guard-cli/stargazers)
 
 A comprehensive command-line tool for monitoring, analyzing, and optimizing your carbon footprint across AWS infrastructure, local development environments, and personal consumption patterns.
 
@@ -12,7 +12,7 @@ A comprehensive command-line tool for monitoring, analyzing, and optimizing your
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/carbon-guard-cli.git
+git clone https://github.com/azaynul10/carbon-guard-cli.git
 cd carbon-guard-cli
 
 # Install dependencies
