@@ -1131,9 +1131,9 @@ MIT License - see LICENSE file for details.
 
 ## Support
 
-- GitHub Issues: https://github.com/carbonguard/carbon-guard-cli/issues
-- Documentation: https://carbonguard.github.io/carbon-guard-cli/
-- Email: support@carbonguard.com
+- GitHub Issues: https://github.com/azaynul10/carbon-guard-cli/issues
+- Documentation: 
+- Email: azaynul3@gmail.com
 
 ## Changelog
 
