@@ -1,0 +1,39 @@
+# Carbon Guard CLI Configuration
+
+# Global carbon intensity (kg CO2 per kWh)
+carbon_intensity: 0.000475
+
+# Local system parameters
+cpu_tdp_watts: 65
+memory_power_per_gb: 3
+
+# Data storage directory
+data_directory: "carbon_data"
+
+# AWS-specific settings
+aws:
+  default_region: "us-east-1"
+  carbon_intensity_by_region:
+    us-east-1: 0.000415    # US East (N. Virginia)
+    us-east-2: 0.000523    # US East (Ohio)
+    us-west-1: 0.000351    # US West (N. California)
+    us-west-2: 0.000351    # US West (Oregon)
+    eu-west-1: 0.000316    # Europe (Ireland)
+    eu-central-1: 0.000338 # Europe (Frankfurt)
+    ap-southeast-1: 0.000493  # Asia Pacific (Singapore)
+    ap-northeast-1: 0.000506  # Asia Pacific (Tokyo)
+
+# Local auditing settings
+local:
+  default_monitoring_duration: 60
+  sample_interval: 1.0
+
+# Personal carbon tracking settings
+personal:
+  default_category_filter: "all"
+  ocr_preprocessing: true
+
+# Dashboard export settings
+dashboard:
+  default_export_format: "csv"
+  include_raw_data: false

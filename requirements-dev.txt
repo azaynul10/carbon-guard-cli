@@ -1,0 +1,31 @@
+# Include base requirements
+-r requirements.txt
+
+# Testing framework
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+moto>=4.2.0
+
+# Code formatting and linting
+black>=22.0.0
+flake8>=5.0.0
+isort>=5.12.0
+
+# Type checking
+mypy>=1.0.0
+types-requests>=2.28.0
+types-PyYAML>=6.0.0
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.2.0
+
+# Development tools
+pre-commit>=3.0.0
+tox>=4.0.0
+
+# Jupyter for data analysis (optional)
+jupyter>=1.0.0
+matplotlib>=3.6.0
+seaborn>=0.12.0

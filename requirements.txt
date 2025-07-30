@@ -1,0 +1,48 @@
+# Core CLI framework
+click>=8.0.0
+
+# AWS integration
+boto3>=1.26.0
+botocore>=1.29.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Image processing and OCR
+Pillow>=9.0.0
+pytesseract>=0.3.10
+
+# Data processing and export
+pandas>=1.5.0
+openpyxl>=3.0.0
+
+# Configuration and serialization
+PyYAML>=6.0
+
+# Rich terminal output
+rich>=12.0.0
+
+# HTTP requests
+requests>=2.28.0
+
+# Docker integration
+docker>=6.0.0
+
+# Date/time handling
+python-dateutil>=2.8.0
+
+# AWS mocking for testing (required for --mock flag)
+moto>=4.2.0
+
+# JSON handling (usually built-in, but explicit for clarity)
+# json - built-in module
+
+# Development and testing dependencies (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+flake8>=5.0.0
+mypy>=1.0.0
+
+# Optional: For enhanced terminal experience
+colorama>=0.4.0
