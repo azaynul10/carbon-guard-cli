@@ -248,12 +248,22 @@ def audit_aws(ctx, region: str, services: tuple, profile: Optional[str],
     
     # Display results (common for both mock and real)
     total_co2 = sum(service.get('co2_kg_per_hour', 0) for service in results.values())
-    click.echo(f"\n📊 Total estimated CO2: {total_co2:.4f} kg/hour")
+    
+    # Format CO2 values appropriately for small numbers
+    def format_co2(value):
+        if value == 0:
+            return "0.0000"
+        elif value < 0.0001:
+            return f"{value:.2e}"  # Scientific notation for very small numbers
+        else:
+            return f"{value:.4f}"
+    
+    click.echo(f"\n📊 Total estimated CO2: {format_co2(total_co2)} kg/hour")
     
     for service_name, data in results.items():
         co2 = data.get('co2_kg_per_hour', 0)
         cost = data.get('estimated_cost_usd', 0)
-        click.echo(f"  • {service_name}: {co2:.4f} kg/hour (${cost:.2f}/hour)")
+        click.echo(f"  • {service_name}: {format_co2(co2)} kg/hour (${cost:.2f}/hour)")
     
     # Save to file if requested
     if output:
