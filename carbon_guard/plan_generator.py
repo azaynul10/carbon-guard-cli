@@ -639,9 +639,9 @@ class PlanGenerator:
         updated_plan["last_updated"] = datetime.now().isoformat()
         updated_plan["progress"] = {
             "completed_actions": completed_actions,
-            "completion_rate": len(completed_actions) / len(plan["actions"])
-            if plan["actions"]
-            else 0,
+            "completion_rate": (
+                len(completed_actions) / len(plan["actions"]) if plan["actions"] else 0
+            ),
             "actual_reductions": actual_reductions,
             "total_actual_reduction": sum(actual_reductions.values()),
             "variance_from_plan": sum(actual_reductions.values())

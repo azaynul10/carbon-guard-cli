@@ -162,9 +162,9 @@ class LocalAuditor:
                 "script_path": str(script_path),
                 "execution_duration_seconds": actual_duration,
                 "execution_successful": execution_successful,
-                "script_output": script_output[:1000]
-                if script_output
-                else "",  # Limit output size
+                "script_output": (
+                    script_output[:1000] if script_output else ""
+                ),  # Limit output size
                 "script_errors": script_errors[:1000] if script_errors else "",
                 "monitoring_samples": len(self.monitoring_data),
                 "audit_timestamp": time.time(),
@@ -194,12 +194,14 @@ class LocalAuditor:
             "cpu_percent": psutil.cpu_percent(interval=0.1),
             "memory_percent": psutil.virtual_memory().percent,
             "memory_used_gb": psutil.virtual_memory().used / (1024**3),
-            "disk_io_read_bytes": psutil.disk_io_counters().read_bytes
-            if psutil.disk_io_counters()
-            else 0,
-            "disk_io_write_bytes": psutil.disk_io_counters().write_bytes
-            if psutil.disk_io_counters()
-            else 0,
+            "disk_io_read_bytes": (
+                psutil.disk_io_counters().read_bytes if psutil.disk_io_counters() else 0
+            ),
+            "disk_io_write_bytes": (
+                psutil.disk_io_counters().write_bytes
+                if psutil.disk_io_counters()
+                else 0
+            ),
         }
 
         if include_network:
@@ -354,9 +356,9 @@ class LocalAuditor:
                 1 for r in results.values() if isinstance(r, dict) and "error" not in r
             ),
             "total_co2_kg": total_co2,
-            "average_co2_per_script": total_co2 / len(script_paths)
-            if script_paths
-            else 0,
+            "average_co2_per_script": (
+                total_co2 / len(script_paths) if script_paths else 0
+            ),
             "audit_timestamp": time.time(),
         }
 
@@ -601,42 +603,44 @@ class LocalAuditor:
                 "efficiency_metrics": {
                     "co2_per_cpu_percent": round(co2_per_cpu_percent, 10),
                     "co2_per_gb_memory": round(co2_per_gb_memory, 8),
-                    "watts_per_cpu_percent": round(
-                        total_power_watts / avg_system_cpu_percent, 3
-                    )
-                    if avg_system_cpu_percent > 0
-                    else 0,
+                    "watts_per_cpu_percent": (
+                        round(total_power_watts / avg_system_cpu_percent, 3)
+                        if avg_system_cpu_percent > 0
+                        else 0
+                    ),
                 },
                 "resource_utilization": {
-                    "cpu_efficiency": round(
-                        (avg_script_cpu_percent / avg_system_cpu_percent) * 100, 1
-                    )
-                    if avg_system_cpu_percent > 0
-                    else 0,
+                    "cpu_efficiency": (
+                        round(
+                            (avg_script_cpu_percent / avg_system_cpu_percent) * 100, 1
+                        )
+                        if avg_system_cpu_percent > 0
+                        else 0
+                    ),
                     "memory_utilization_percent": round(
                         (avg_memory_gb / self.total_memory_gb) * 100, 1
                     ),
                     "power_distribution": {
-                        "cpu_percent": round(
-                            (cpu_power_watts / total_power_watts) * 100, 1
-                        )
-                        if total_power_watts > 0
-                        else 0,
-                        "memory_percent": round(
-                            (memory_power_watts / total_power_watts) * 100, 1
-                        )
-                        if total_power_watts > 0
-                        else 0,
-                        "disk_percent": round(
-                            (disk_power_watts / total_power_watts) * 100, 1
-                        )
-                        if total_power_watts > 0
-                        else 0,
-                        "network_percent": round(
-                            (network_power_watts / total_power_watts) * 100, 1
-                        )
-                        if total_power_watts > 0
-                        else 0,
+                        "cpu_percent": (
+                            round((cpu_power_watts / total_power_watts) * 100, 1)
+                            if total_power_watts > 0
+                            else 0
+                        ),
+                        "memory_percent": (
+                            round((memory_power_watts / total_power_watts) * 100, 1)
+                            if total_power_watts > 0
+                            else 0
+                        ),
+                        "disk_percent": (
+                            round((disk_power_watts / total_power_watts) * 100, 1)
+                            if total_power_watts > 0
+                            else 0
+                        ),
+                        "network_percent": (
+                            round((network_power_watts / total_power_watts) * 100, 1)
+                            if total_power_watts > 0
+                            else 0
+                        ),
                     },
                 },
             }

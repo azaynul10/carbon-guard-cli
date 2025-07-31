@@ -233,9 +233,9 @@ class ReceiptParser:
                                 "name": item_name,
                                 "price": price,
                                 "quantity": quantity,
-                                "unit_price": price / quantity
-                                if quantity > 0
-                                else price,
+                                "unit_price": (
+                                    price / quantity if quantity > 0 else price
+                                ),
                                 "raw_line": line,
                             }
                         )
@@ -509,8 +509,8 @@ class ReceiptParser:
                 "successful_parses": sum(1 for r in all_results if "error" not in r),
                 "total_co2_kg": total_co2,
                 "category_breakdown": combined_categories,
-                "average_co2_per_receipt": total_co2 / len(image_paths)
-                if image_paths
-                else 0,
+                "average_co2_per_receipt": (
+                    total_co2 / len(image_paths) if image_paths else 0
+                ),
             },
         }

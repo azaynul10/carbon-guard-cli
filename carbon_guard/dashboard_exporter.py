@@ -554,10 +554,11 @@ class DashboardExporter:
             "plans": len(consolidated_data["plans"]),
             "date_range": date_range,
             "total_co2_kg": total_co2_kg,
-            "avg_daily_co2_kg": total_co2_kg
-            / max(1, len({ts[:10] for ts in all_timestamps}))
-            if all_timestamps
-            else 0,
+            "avg_daily_co2_kg": (
+                total_co2_kg / max(1, len({ts[:10] for ts in all_timestamps}))
+                if all_timestamps
+                else 0
+            ),
         }
 
     def create_dashboard_template(self, output_path: str) -> str:
