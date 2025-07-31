@@ -81,3 +81,4 @@ aws-credentials.json
 
 # Build artifacts
 =4.2.0
+# Pre-commit is now configured!
