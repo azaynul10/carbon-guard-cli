@@ -60,7 +60,7 @@ carbon-guard audit-aws --mock
 
 ```bash
 # Clone the repository
-git clone https://github.com/carbonguard/carbon-guard-cli.git
+git clone https://github.com/azaynul10/carbon-guard-cli.git
 cd carbon-guard-cli
 
 # Install in development mode
@@ -108,7 +108,7 @@ pip install carbon-guard-cli
 
 ```bash
 # Clone and set up development environment
-git clone https://github.com/carbonguard/carbon-guard-cli.git
+git clone https://github.com/azaynul10/carbon-guard-cli.git
 cd carbon-guard-cli
 
 # Create virtual environment
@@ -1131,9 +1131,9 @@ MIT License - see LICENSE file for details.
 
 ## Support
 
-- GitHub Issues: https://github.com/carbonguard/carbon-guard-cli/issues
-- Documentation: https://carbonguard.github.io/carbon-guard-cli/
-- Email: support@carbonguard.com
+- GitHub Issues: https://github.com/azaynul10/carbon-guard-cli/issues
+- Documentation: 
+- Email: azaynul3@gmail.com
 
 ## Changelog
 
